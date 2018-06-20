@@ -15,8 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // Start the app with the screen size
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        guard let window = self.window else { fatalError("No Window") }
+        window.rootViewController = TipAmountViewController()
+        window.makeKeyAndVisible()
+        
         // Override point for customization after application launch.
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
